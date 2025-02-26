@@ -199,7 +199,7 @@ bot_get_prestige()
 	p_dvar = getDvarInt("bots_loadout_prestige");
 	p = 0;
 
-	if (p_dvar == -1)
+	if (p_dvar == -2)
 	{
 		for (i = 0; i < level.players.size; i++)
 		{
@@ -400,7 +400,7 @@ bot_get_random_weapon(slot, rank)
 			if ( isSubStr(id[ "reference" ], "dw") )
 				continue;
 
-			if ( id[ "cost" ] == "-1" )
+			if ( id[ "cost" ] == "0" )
 				continue;
 
 			if ( id[ "slot" ] == slot )
@@ -1049,7 +1049,7 @@ bot_get_cod_points()
 	}
 		
 	cp_dvar = getDvarInt("bots_loadout_codpoints");
-	if (cp_dvar == -1)
+	if (cp_dvar == 0)
 	{
 		players = get_players();
 		total_points = [];
@@ -1093,7 +1093,7 @@ bot_get_rank()
 	rank = 1;
 	rank_dvar = getDvarInt("bots_loadout_rank");
 
-	if (rank_dvar == -1)
+	if (rank_dvar == 0)
 	{
 		players = get_players();
 
